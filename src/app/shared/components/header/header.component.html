@@ -1,0 +1,70 @@
+<section class="flex items-center justify-between">
+  <div
+    class="bg-white w-14 h-14 flex items-center justify-center rounded-full cursor-pointer"
+  >
+    <div class="">
+      <lucide-icon [img]="menuIcon" class="text-pblue" size="32"></lucide-icon>
+    </div>
+  </div>
+
+  <article class="flex items-center gap-2">
+    <div
+      class="bg-white min-w-fit h-14 pl-2.5 pr-5 flex items-center rounded-full"
+    >
+      <div class="flex items-center gap-3">
+        <div class="p-2.5 bg-blue-50 rounded-full">
+          <lucide-icon
+            [img]="calendarIcon"
+            class="text-pblue"
+            size="18"
+          ></lucide-icon>
+        </div>
+        <span class="font-bold">{{ today | date : "ccc, dd MMM yyyy" }}</span>
+      </div>
+    </div>
+
+    <div
+      class="bg-white min-w-fit h-14 pl-2.5 pr-5 flex items-center rounded-full"
+    >
+      <div class="flex items-center gap-3">
+        <div class="p-2.5 bg-blue-50 rounded-full">
+          <lucide-icon
+            [img]="clockIcon"
+            class="text-pblue"
+            size="18"
+          ></lucide-icon>
+        </div>
+        <span class="font-bold"
+          >{{ today | date : "hh:mm"
+          }}<span class="text-gray-500 ml-1.5">{{
+            today | date : "aa"
+          }}</span></span
+        >
+      </div>
+    </div>
+
+    <div
+      class="bg-white min-w-fit h-14 pl-5 pr-2.5 flex items-center rounded-full cursor-pointer"
+    >
+      <div class="flex items-center gap-3">
+        <span
+          [class]="{
+            'font-bold': true,
+            'text-pred': orderStatus === 'close',
+            'text-pgreen': orderStatus === 'open'
+          }"
+        >
+          <span class="text-xs mr-0.5">●</span>
+          {{ orderStatus === "close" ? "Close Order" : "Open Order" }}</span
+        >
+        <div class="p-2.5 bg-blue-50 rounded-full">
+          <lucide-icon
+            [img]="powerIcon"
+            [class]="orderStatus === 'close' ? 'text-pred' : 'text-pgreen'"
+            size="18"
+          ></lucide-icon>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>

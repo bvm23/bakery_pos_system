@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+@theme {
+  --color-pblue: #2d71f8;
+  --color-pgreen: #1c8370;
+  --color-pred: #fc4a4a;
+}
