@@ -1,0 +1,8 @@
+<section
+  class="flex flex-row items-center py-2 overflow-x-auto w-full gap-4 mask-r-from-94%"
+  style="scrollbar-width: none"
+>
+  @for (category of categories(); track $index) {
+  <b-category-item [category]="category" />
+  }
+</section>

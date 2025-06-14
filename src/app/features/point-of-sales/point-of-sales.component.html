@@ -1,8 +1,9 @@
 <section class="flex h-dvh">
-  <article class="flex-4/6 p-4 min-w-fit">
+  <article class="w-4/6 p-4 flex flex-col">
     <b-header />
+    <b-category [categories]="categories()" />
   </article>
-  <article class="flex-2/6 min-w-fit">
+  <article class="w-2/6">
     <b-order />
   </article>
 </section>

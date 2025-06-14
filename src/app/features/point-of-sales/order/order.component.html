@@ -5,13 +5,7 @@
       <div
         class="bg-gray-200 w-14 h-14 flex items-center justify-center rounded-full cursor-pointer"
       >
-        <div class="">
-          <lucide-icon
-            [img]="billIcon"
-            class="text-gray-500"
-            size="18"
-          ></lucide-icon>
-        </div>
+        <b-icon [name]="billIcon" size="18" />
       </div>
       <div class="flex-1">
         <input
@@ -25,13 +19,7 @@
       <div
         class="bg-gray-200 w-14 h-14 flex items-center justify-center rounded-full cursor-pointer"
       >
-        <div class="">
-          <lucide-icon
-            [img]="editIcon"
-            class="text-gray-500"
-            size="18"
-          ></lucide-icon>
-        </div>
+        <b-icon [name]="editIcon" size="18" />
       </div>
     </header>
 
@@ -93,11 +81,12 @@
           class="w-full outline-none p-2 placeholder:text-gray-500 font-bold"
         />
         <div class="bg-white rounded-full p-2">
-          <lucide-icon
-            [img]="offerIcon"
-            class="text-black my-auto right-0"
+          <b-icon
+            [name]="offerIcon"
             size="22"
-          ></lucide-icon>
+            class="my-auto right-0"
+            color="#000"
+          />
         </div>
       </div>
       <button

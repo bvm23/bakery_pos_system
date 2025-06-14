@@ -2,9 +2,7 @@
   <div
     class="bg-white w-14 h-14 flex items-center justify-center rounded-full cursor-pointer"
   >
-    <div class="">
-      <lucide-icon [img]="menuIcon" class="text-pblue" size="32"></lucide-icon>
-    </div>
+    <b-icon [name]="menuIcon" color="var(--color-pblue)" size="32" />
   </div>
 
   <article class="flex items-center gap-2">
@@ -13,11 +11,7 @@
     >
       <div class="flex items-center gap-3">
         <div class="p-2.5 bg-blue-50 rounded-full">
-          <lucide-icon
-            [img]="calendarIcon"
-            class="text-pblue"
-            size="18"
-          ></lucide-icon>
+          <b-icon [name]="calendarIcon" color="var(--color-pblue)" size="18" />
         </div>
         <span class="font-bold">{{ today | date : "ccc, dd MMM yyyy" }}</span>
       </div>
@@ -28,11 +22,7 @@
     >
       <div class="flex items-center gap-3">
         <div class="p-2.5 bg-blue-50 rounded-full">
-          <lucide-icon
-            [img]="clockIcon"
-            class="text-pblue"
-            size="18"
-          ></lucide-icon>
+          <b-icon [name]="clockIcon" color="var(--color-pblue)" size="18" />
         </div>
         <span class="font-bold"
           >{{ today | date : "hh:mm"
@@ -58,11 +48,15 @@
           {{ orderStatus === "close" ? "Close Order" : "Open Order" }}</span
         >
         <div class="p-2.5 bg-blue-50 rounded-full">
-          <lucide-icon
-            [img]="powerIcon"
-            [class]="orderStatus === 'close' ? 'text-pred' : 'text-pgreen'"
+          <b-icon
+            [name]="powerIcon"
+            [color]="
+              orderStatus === 'close'
+                ? 'var(--color-pred)'
+                : 'var(--color-pgreen)'
+            "
             size="18"
-          ></lucide-icon>
+          />
         </div>
       </div>
     </div>

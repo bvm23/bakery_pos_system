@@ -1,17 +1,12 @@
 import { DatePipe } from '@angular/common';
 import { Component, DestroyRef, inject, OnInit } from '@angular/core';
-import {
-  LucideAngularModule,
-  CalendarDays,
-  Menu,
-  Clock4,
-  Power,
-} from 'lucide-angular';
-import { BehaviorSubject, from, interval } from 'rxjs';
+import { CalendarDays, Menu, Clock4, Power } from 'lucide-angular';
+import { interval } from 'rxjs';
+import { IconComponent } from '../icon/icon.component';
 
 @Component({
   selector: 'b-header',
-  imports: [LucideAngularModule, DatePipe],
+  imports: [DatePipe, IconComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })

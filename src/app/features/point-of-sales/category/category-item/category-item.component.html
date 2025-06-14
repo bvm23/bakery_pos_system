@@ -1,0 +1,11 @@
+<article
+  class="min-w-52 min-h-48 p-4 rounded-2xl flex flex-col justify-center bg-white border border-transparent scroll-smooth"
+>
+  <div class="bg-gray-300 w-fit p-2 rounded-full">
+    <b-icon [name]="tagIcon" />
+  </div>
+  <p class="mt-auto mb-0 font-bold capitalize text-xl">
+    {{ category()?.name }}
+  </p>
+  <p class="mt-1 text-gray-500">{{ category()?.count }} Items</p>
+</article>
