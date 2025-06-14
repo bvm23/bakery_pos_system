@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, inject, OnInit, signal } from '@angular/core';
 import { HeaderComponent } from '../../shared/components/header/header.component';
 import { OrderComponent } from './order/order.component';
 import { MenuService } from '../../services/menu.service';
@@ -11,7 +11,7 @@ import { CategoryComponent } from './category/category.component';
   templateUrl: './point-of-sales.component.html',
   styleUrl: './point-of-sales.component.scss',
 })
-export class PointOfSalesComponent {
+export class PointOfSalesComponent implements OnInit {
   private menuServices = inject(MenuService);
 
   menuItems = this.menuServices.loadedMenuItems;
@@ -34,10 +34,15 @@ export class PointOfSalesComponent {
         let count = this.menuItems()?.filter((item) =>
           item.tags.includes(tag)
         ).length;
-        return { name: tag, count };
+        return {
+          label: tag,
+          value: tag.split(' ').join('-').toLowerCase(),
+          count,
+        };
       });
       categoryData?.unshift({
-        name: 'All Items',
+        label: 'All Items',
+        value: 'all',
         count: this.menuItems()?.length,
       });
       return categoryData as Tag[];

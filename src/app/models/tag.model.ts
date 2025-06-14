@@ -1,4 +1,5 @@
 export interface Tag {
-  name: string;
+  label: string;
+  value: string;
   count: number;
 }
